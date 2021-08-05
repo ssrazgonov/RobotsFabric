@@ -47,17 +47,24 @@ class RobotsFactory
         for ($i = 0; $i < $amount; $i++) {
             $newRobot = new $RobotClassName();
 
-            // клонируем высоту, скорость, требуется для Merged Robots
             if ($cloneProps) {
-                foreach (get_object_vars($this->availableRobotTypes[$RobotClassName]) as $key => $value) {
-                    $newRobot->$key = $value;
-                }
+               $this->cloneProps($newRobot, $RobotClassName);
             }
 
             $robots[] = $newRobot;
         }
 
         return $robots;
+    }
+
+    /**
+     * @param Robot $robot
+     * @param $availableRobotTypesKey
+     */
+    private function cloneProps(Robot $robot, $availableRobotTypesKey) {
+        foreach (Robot::getSetters() as $getter => $setter) {
+            $robot->$setter($this->availableRobotTypes[$availableRobotTypesKey]->$getter());
+        }
     }
 
     /**

@@ -8,14 +8,21 @@ namespace App;
  */
 class Robot
 {
-    protected $mass;
-    protected $speed;
-    protected $height;
-    public function __construct()
-    {
-        $this->mass   = 0;
-        $this->speed  = 0;
-        $this->height = 0;
+
+    protected $mass = 0;
+    protected $speed = 0;
+    protected $height = 0;
+
+    const MASS = "setMass";
+    const SPEED = "setSpeed";
+    const HEIGHT = "setHeight";
+
+    public static function getSetters() {
+        return [
+            "getMass" => "setMass",
+            "getSpeed" => "setSpeed",
+            "getHeight" => "setHeight"
+        ];
     }
 
     /**

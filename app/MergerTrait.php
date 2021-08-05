@@ -37,6 +37,6 @@ Trait MergerTrait
     }
 
     private function recalculateSpeed(Robot $robot) {
-        $this->setMass($robot->getSpeed() < $this->getSpeed() ? $robot->getSpeed() : $this->getSpeed());
+        $this->setSpeed($robot->getSpeed() < $this->getSpeed() ? $robot->getSpeed() : $this->getSpeed());
     }
 }
