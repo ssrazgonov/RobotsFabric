@@ -8,5 +8,7 @@ namespace App;
  */
 class Robot2 extends Robot
 {
-
+    protected $height = 20;
+    protected $mass = 20;
+    protected $speed = 20;
 }

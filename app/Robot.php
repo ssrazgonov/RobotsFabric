@@ -8,7 +8,31 @@ namespace App;
  */
 class Robot
 {
-    public function __construct()
+    protected $mass;
+    protected $speed;
+    protected $height;
+
+    /**
+     * @return mixed
+     */
+    public function getMass()
     {
+        return $this->mass;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getSpeed()
+    {
+        return $this->speed;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getHeight()
+    {
+        return $this->height;
     }
 }
