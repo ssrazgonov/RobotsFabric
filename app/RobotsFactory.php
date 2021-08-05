@@ -3,10 +3,9 @@
 namespace App;
 
 use Exception;
-use function Couchbase\defaultDecoder;
 
 /**
- * Creates Robots objects
+ * Фабрика по созданию обьектов типа Robot
  * Class RobotsFactory
  */
 class RobotsFactory
@@ -14,13 +13,7 @@ class RobotsFactory
     private $availableRobotTypes = [];
 
     /**
-     * RobotsFactory constructor.
-     */
-    public function __construct()
-    {
-    }
-
-    /**
+     * Добавление определенного типа к разрешенным
      * @param Robot $robot
      */
     public function addType(Robot $robot) {
@@ -30,6 +23,8 @@ class RobotsFactory
     }
 
     /**
+     * Функция создает объект из добавленных типов,
+     * при необходимости заполняет созданный объект параметрами из эталонного объекта (mergedRobots)
      * @param $RobotClassName
      * @param $amount int
      * @param $cloneProps boolean
@@ -58,6 +53,7 @@ class RobotsFactory
     }
 
     /**
+     * Заполняет переданный объект параметрами из эталонного (последний объект, переданный в addType)
      * @param Robot $robot
      * @param $availableRobotTypesKey
      */
@@ -68,6 +64,7 @@ class RobotsFactory
     }
 
     /**
+     * Получаем имя класса из объекта
      * @param Robot $robot
      * @return string
      */

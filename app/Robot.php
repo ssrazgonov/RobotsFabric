@@ -3,6 +3,7 @@
 namespace App;
 
 /**
+ * Базовый класс роботов
  * Class Robot
  * @package App
  */
@@ -13,10 +14,10 @@ class Robot
     protected $speed = 0;
     protected $height = 0;
 
-    const MASS = "setMass";
-    const SPEED = "setSpeed";
-    const HEIGHT = "setHeight";
-
+    /**
+     * возвращает геттеры и сеттеры для динамического использования в коде
+     * @return array
+     */
     public static function getSetters() {
         return [
             "getMass" => "setMass",
