@@ -6,12 +6,7 @@ namespace App;
  * Merging robots class
  * Class RobotsMerger
  */
-class RobotsMerger
+class RobotsMerger extends Robot
 {
-    /**
-     * RobotsMerger constructor.
-     */
-    public function __construct()
-    {
-    }
+    use MergerTrait;
 }
